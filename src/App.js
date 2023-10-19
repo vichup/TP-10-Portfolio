@@ -17,6 +17,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Layout from "./pages/Layout";
 import Contact from "./pages/Contact";
 
+import CreationsProvider from "./context/CreationsContext";
+
 function App() {
   const [load, upadateLoad] = useState(true);
 
@@ -29,22 +31,27 @@ function App() {
   }, []);
 
   return (
-    <Router>
+
+    <CreationsProvider>    
+      <Router>
       <Preloader load={load} />
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Layout/>}>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="/project" element={<Projects />} />
           <Route path="/about" element={<About />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<Navigate to="/"/>} />
-         </Route>
-        </Routes>
-        
-    
+          
+        </Route>
+      </Routes>
+
+
     </Router>
+
+    </CreationsProvider>
+
   );
 }
 
