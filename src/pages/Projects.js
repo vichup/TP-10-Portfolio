@@ -2,13 +2,6 @@ import React, { useContext } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "../components/Projects/ProjectCards";
 import Particle from "../components/Particle";
-import leaf from "../Assets/Projects/leaf.png";
-import emotion from "../Assets/Projects/emotion.png";
-import editor from "../Assets/Projects/codeEditor.png";
-import chatify from "../Assets/Projects/chatify.png";
-import suicide from "../Assets/Projects/suicide.png";
-import bitsOfCode from "../Assets/Projects/blog.png";
-
 import { CreationsContext } from "../context/CreationsContext";
 
 function Projects() {
@@ -30,12 +23,13 @@ function Projects() {
           
             
           {projects.map((project,index) => {
-                console.log(project)
+                
               return (
                 <>
                 <Col md={4} className="project-card">
                    <ProjectCard
-                   imgPath={project.image}
+                   id={project.id}
+                   imgPath={project.imagen}
                    isBlog={false}
                    title={project.title}
                    description={project.description}

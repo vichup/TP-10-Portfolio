@@ -23,10 +23,18 @@ const CreationsProvider = (props) => {
         },[])
 
 
+    const GetProyectById = (id) => {
+        
+        return projects[id-1]
+
+    }
+
+
     return (
         <CreationsContext.Provider
           value={{
            projects,
+           GetProyectById
 
           }}
         >

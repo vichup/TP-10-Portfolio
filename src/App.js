@@ -18,6 +18,7 @@ import Layout from "./pages/Layout";
 import Contact from "./pages/Contact";
 
 import CreationsProvider from "./context/CreationsContext";
+import ProjectDetail from "./pages/ProjectDetail";
 
 function App() {
   const [load, upadateLoad] = useState(true);
@@ -43,6 +44,8 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/projectDetail/:id" element={<ProjectDetail />} />
+          <Route path="/*" element={<Home />} />
           
         </Route>
       </Routes>
