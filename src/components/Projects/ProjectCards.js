@@ -6,7 +6,14 @@ import { BsGithub } from "react-icons/bs";
 import { CgFileDocument } from "react-icons/cg";
 import { Link } from "react-router-dom";
 
+import {FavouritesContext} from "../../context/FavouritesContext"
+import { useContext } from "react";
+
 function ProjectCards(props) {
+
+  const {AddFavourite} = useContext(FavouritesContext)
+
+
   return (
     <Card className="project-card-view">
       <Card.Img variant="top" src={props.imgPath} alt="card-img" height="220rm" width="auto" />

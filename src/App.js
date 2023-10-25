@@ -19,6 +19,8 @@ import Contact from "./pages/Contact";
 
 import CreationsProvider from "./context/CreationsContext";
 import ProjectDetail from "./pages/ProjectDetail";
+import FavouritesProvider from "./context/FavouritesContext";
+import Favourites from "./pages/Favourites";
 
 function App() {
   const [load, upadateLoad] = useState(true);
@@ -33,6 +35,7 @@ function App() {
 
   return (
 
+    <FavouritesProvider>
     <CreationsProvider>    
       <Router>
       <Preloader load={load} />
@@ -45,6 +48,7 @@ function App() {
           <Route path="/resume" element={<Resume />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/projectDetail/:id" element={<ProjectDetail />} />
+          <Route path="/favourites" element={<Favourites />} />
           <Route path="/*" element={<Home />} />
           
         </Route>
@@ -54,6 +58,7 @@ function App() {
     </Router>
 
     </CreationsProvider>
+    </FavouritesProvider>
 
   );
 }

@@ -4,7 +4,7 @@ import Particle from "../components/Particle";
 import { useParams } from 'react-router';
 import axios from 'axios';
 import { CreationsContext } from "../context/CreationsContext";
-
+import {FavouritesContext} from "../context/FavouritesContext"
 
 export default function ProjectDetail() {
 
@@ -12,6 +12,9 @@ export default function ProjectDetail() {
     const { id } = useParams();
     const [loading, setLoading] = useState(false);
     const [project, setProject] = useState([]);
+
+    
+    const {AddFavourite} = useContext(FavouritesContext)
 
     useEffect(async () => {
 
@@ -28,9 +31,13 @@ export default function ProjectDetail() {
     }, []);
 
     return (
+        <>
+        <Particle />
         <Container fluid className="project-section">
-            <Particle />
-            <div className='container text-center'>
+            
+                   
+            
+             <div className='container text-center'>
 
                 <h1 className="project-heading pb-2">
                     {project.titulo}
@@ -40,8 +47,10 @@ export default function ProjectDetail() {
 
                 <img src={project.imagen} height="300px" width="auto" style={{borderRadius:10}}></img>
                 <br></br>
-                <button style={{ borderRadius:10}} className="mt-4 btn btn-primary">Add to favorites</button>
+                <button style={{ borderRadius:10}} className="mt-4 btn btn-primary" onClick={() => AddFavourite(project)}>Add to favorites</button>
             </div>
+           
         </Container>
+        </>
     )
 }
