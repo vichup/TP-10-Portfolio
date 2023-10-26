@@ -6,11 +6,14 @@ import {
   AiFillInstagram,
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
+import ContactForm from "./ContactForm";
 
 function Footer() {
   let date = new Date();
   let year = date.getFullYear();
   return (
+    <>
+    <ContactForm />
     <Container fluid className="footer">
       <Row>
         <Col md="4" className="footer-copywright">
@@ -43,7 +46,7 @@ function Footer() {
             </li>
             <li className="social-icons">
               <a
-                href="https://www.linkedin.com/in/soumyajit4419/"
+                href="https://www.linkedin.com/in/tiagocoladonato/"
                 style={{ color: "white" }}
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -53,7 +56,7 @@ function Footer() {
             </li>
             <li className="social-icons">
               <a
-                href="https://www.instagram.com/soumyajit4419"
+                href="https://www.instagram.com/ttiago.c"
                 style={{ color: "white" }}
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -65,6 +68,8 @@ function Footer() {
         </Col>
       </Row>
     </Container>
+
+    </>
   );
 }
 

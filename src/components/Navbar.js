@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
@@ -13,12 +13,15 @@ import {
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
 } from "react-icons/ai";
-
 import { CgFileDocument } from "react-icons/cg";
+import {FavouritesContext} from "../context/FavouritesContext"
+import { Row } from "react-bootstrap";
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
+
+  const {cantidadFavoritos } = useContext(FavouritesContext);
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
@@ -104,11 +107,16 @@ function NavBar() {
 
             <Nav.Item className="fork-btn">
             <Link to="/favourites">
+           
               <Button
                 className="fork-btn-inner"
               >
-                <AiFillStar style={{ fontSize: "1.1em" }} />
+                <div style={{display:'flex', flexDirection:'row'}}>
+                <AiFillStar style={{ fontSize: "1.6em" }} />
+                <div style={{backgroundColor:'#c199ca', borderRadius:10, height:'25px', width:25}}><p className='text-center ' style={{color:'white'}}>{cantidadFavoritos}</p></div>
+                </div>
               </Button>
+              
               </Link>
             </Nav.Item>
           </Nav>

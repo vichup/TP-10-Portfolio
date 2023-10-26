@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import homeLogo from "../../Assets/home-main.svg";
 import Particle from "../Particle";
+import FeaturedProjectsSection from "./FeaturedProjectsSection";
 import PersonalIntroductionSection from "./PersonalIntroductionSection";
 import Type from "./Type";
 
@@ -42,6 +43,7 @@ function Home() {
         </Container>
       </Container>
       <PersonalIntroductionSection />
+      <FeaturedProjectsSection />
     </section>
   );
 }
