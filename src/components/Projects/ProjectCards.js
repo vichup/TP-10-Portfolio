@@ -6,20 +6,22 @@ import { BsGithub } from "react-icons/bs";
 import { CgFileDocument } from "react-icons/cg";
 import { Link } from "react-router-dom";
 import { AiOutlineClose } from "react-icons/ai";
+import PropTypes from 'prop-types'
 
-import {FavouritesContext} from "../../context/FavouritesContext"
+import { FavouritesContext } from "../../context/FavouritesContext"
 import { useContext } from "react";
+import { propTypes } from "react-bootstrap/esm/Image";
 
 function ProjectCards(props) {
 
-  const {AddFavourite} = useContext(FavouritesContext)
+  const { AddFavourite } = useContext(FavouritesContext)
 
 
   return (
     <Card className="project-card-view">
-      
+
       <Card.Img variant="top" src={props.imgPath} alt="card-img" height="220rm" width="auto" />
-      
+
       <Card.Body>
         <Card.Title>{props.title}</Card.Title>
         <Card.Text style={{ textAlign: "justify" }}>
@@ -61,9 +63,22 @@ function ProjectCards(props) {
           </Button>
         )}
 
-       
+
       </Card.Body>
     </Card>
   );
 }
 export default ProjectCards;
+
+
+ProjectCards.propTypes = {
+
+  id: PropTypes.number,
+  imgPath: PropTypes.string,
+  isBlog : propTypes.bool,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  ghLink: PropTypes.string,
+  demoLink: PropTypes.string,
+
+}
