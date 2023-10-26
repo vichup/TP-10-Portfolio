@@ -5,6 +5,7 @@ import { CgWebsite } from "react-icons/cg";
 import { BsGithub } from "react-icons/bs";
 import { CgFileDocument } from "react-icons/cg";
 import { Link } from "react-router-dom";
+import { AiOutlineClose } from "react-icons/ai";
 
 import {FavouritesContext} from "../../context/FavouritesContext"
 import { useContext } from "react";
@@ -16,7 +17,9 @@ function ProjectCards(props) {
 
   return (
     <Card className="project-card-view">
+      
       <Card.Img variant="top" src={props.imgPath} alt="card-img" height="220rm" width="auto" />
+      
       <Card.Body>
         <Card.Title>{props.title}</Card.Title>
         <Card.Text style={{ textAlign: "justify" }}>
@@ -57,6 +60,8 @@ function ProjectCards(props) {
             {"Demo"}
           </Button>
         )}
+
+       
       </Card.Body>
     </Card>
   );

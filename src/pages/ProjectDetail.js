@@ -14,7 +14,7 @@ export default function ProjectDetail() {
     const [project, setProject] = useState([]);
 
     
-    const {AddFavourite} = useContext(FavouritesContext)
+    const {AddFavourite, DeleteFavourite, favourites} = useContext(FavouritesContext)
 
     useEffect(async () => {
 
@@ -24,11 +24,24 @@ export default function ProjectDetail() {
         const proyecto = await GetProyectById(id)
         setProject(proyecto)
         setLoading(false);
-        return;
+      
 
 
 
     }, []);
+
+  const EstaEnFavs = ()  => {
+    console.log(project)
+    console.log("favoritos: " + JSON.stringify(favourites))
+    const result = favourites.find(({id}) => id === project.id)
+    if (result == undefined) {
+        return true
+    }else{
+        return false
+    }
+  }
+
+
 
     return (
         <>
@@ -47,8 +60,15 @@ export default function ProjectDetail() {
 
                 <img src={project.imagen} height="300px" width="auto" style={{borderRadius:10}}></img>
                 <br></br>
-                <button style={{ borderRadius:10}} className="mt-4 btn btn-primary" onClick={() => AddFavourite(project)}>Add to favorites</button>
-            </div>
+               {EstaEnFavs() ?
+                
+                <button style={{ borderRadius:10}} className="mt-4 btn btn-primary" onClick={() => AddFavourite(project)}>Add to favourites</button>
+                : 
+                <button style={{ borderRadius:10}} className="mt-4 btn btn-primary" onClick={() => DeleteFavourite(project)}>Delete favourite</button>
+            
+            }
+               
+               </div>
            
         </Container>
         </>

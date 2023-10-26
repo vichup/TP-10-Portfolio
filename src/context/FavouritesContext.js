@@ -6,17 +6,17 @@ const FavouritesProvider = (props) => {
 
 
     const [favourites, setFavourites] = useState([]);
-    const [id, setId] = useState(1)
+   
 
-    const cantidadFavoritos = favourites.length
+    
+    let cantidadFavoritos = favourites.length
 
     useEffect(() => {
         
       if (localStorage.getItem("favoritos") != null) {
         let storage = localStorage.getItem("favoritos")
         setFavourites(JSON.parse(storage))
-        let idStorage = localStorage.getItem("id")
-        setId(idStorage)
+       
     }
       },[])
 
@@ -25,18 +25,12 @@ const FavouritesProvider = (props) => {
     
     const AddFavourite = (favourite) => {
 
-      let favouriteId = {
-        ...favourite,
-        id
-      }
+    
 
-
-        setFavourites([...favourites, favouriteId])
+      console.log(favourite)
+        setFavourites([...favourites, favourite])
         
-      localStorage.setItem("favoritos", JSON.stringify([...favourites, favouriteId]))
-      localStorage.setItem("id",id)
-      let nuevaId = parseInt(id) + 1
-      setId(nuevaId)
+      localStorage.setItem("favoritos", JSON.stringify([...favourites, favourite]))
       
     }
 
@@ -44,9 +38,8 @@ const FavouritesProvider = (props) => {
 
     const ResetFavoritos = () => {
         setFavourites([])
-        setId(1)
         localStorage.removeItem("favoritos")
-        localStorage.removeItem("id")
+       
     }
 
     const DeleteFavourite = (deletedItem) => {
