@@ -6,15 +6,15 @@ import { Col, Row } from 'react-bootstrap';
 export default function FeaturedProjectsSection() {
 
     const { projects } = useContext(CreationsContext);
-    console.log(projects)
+    const listaDestadada = projects.filter(item => item.id < 4);
   return (
     <div class="container text-center">
 
     <h1 style={{color:'white'}}>Featured Projects</h1>
     <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-    {projects.map((project,index) => 
+    {listaDestadada.map((project,index) => 
              
-            (index < 3 ? (
+            
                 <Col md={4} className="project-card">
                    <ProjectCard
                    id={project.id}
@@ -25,8 +25,8 @@ export default function FeaturedProjectsSection() {
                    ghLink={project.ghLink}
                    demoLink={project.demoLink}
             />
-            </Col> ) : <></> 
-            ))}
+            </Col> 
+            )}
             </Row>
     </div>
   )
