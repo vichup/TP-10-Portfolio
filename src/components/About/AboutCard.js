@@ -8,33 +8,25 @@ function AboutCard() {
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-            Hi Everyone, I am <span className="purple">Tiago Coladonato </span>
-            from <span className="purple"> Buenos Aires, Argentina.</span>
-            <br /> I am a final year student pursuing an Integrated MSc (IMSc)
-            in Maths and Computing at ORT.
-            <br />
-            Additionally, I am currently employed as a software developer at
-            Mercado Libre.
+            Hola, soy <span className="purple">Vicente Muggeri </span>
+            naci en  <span className="purple"> Buenos Aires, Argentina.</span>
+            <br /> soy un estudiante de ort del ultimo año en la especialida de informatica
             <br />
             <br />
-            Apart from coding, some other activities that I love to do!
+            <br />
+            Aca les dejo algunas cosas que me gustan ahacer, ademas de programar!
           </p>
           <ul>
             <li className="about-activity">
-              <ImPointRight /> Playing Games
+              <ImPointRight /> Jugar juegos
             </li>
             <li className="about-activity">
-              <ImPointRight /> Writing Tech Blogs
+              <ImPointRight /> Escrinir vlogs
             </li>
             <li className="about-activity">
-              <ImPointRight /> Travelling
+              <ImPointRight /> Viajar
             </li>
           </ul>
-
-          <p style={{ color: "rgb(155 126 172)" }}>
-            "Strive to build things that make a difference!"{" "}
-          </p>
-          <footer className="blockquote-footer">Soumyajit</footer>
         </blockquote>
       </Card.Body>
     </Card>

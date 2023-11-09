@@ -10,7 +10,7 @@ export default function FeaturedProjectsSection() {
   return (
     <div class="container text-center">
 
-    <h1 style={{color:'white'}}>Featured Projects</h1>
+    <h1 style={{color:'white'}}>Proyectos</h1>
     <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
     {listaDestadada.map((project,index) => 
              

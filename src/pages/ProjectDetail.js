@@ -62,9 +62,9 @@ export default function ProjectDetail() {
                 <br></br>
                {EstaEnFavs() ?
                 
-                <button style={{ borderRadius:10}} className="mt-4 btn btn-primary" onClick={() => AddFavourite(project)}>Add to favourites</button>
+                <button style={{ borderRadius:10}} className="mt-4 btn btn-primary" onClick={() => AddFavourite(project)}>Agrega a favorito</button>
                 : 
-                <button style={{ borderRadius:10}} className="mt-4 btn btn-primary" onClick={() => DeleteFavourite(project)}>Delete favourite</button>
+                <button style={{ borderRadius:10}} className="mt-4 btn btn-primary" onClick={() => DeleteFavourite(project)}>Borrar favorito</button>
             
             }
                

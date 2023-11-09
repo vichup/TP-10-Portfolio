@@ -3,9 +3,9 @@ import Input from './Input'
 export default function ContactForm() {
   return (
     <div class="contact container-fluid" style={{borderTop:'1px solid black'}}>
-    <h1>CONTACT ME</h1>
+    <h1>CONTACTENME EN VICENTEMUGGERI@GMAIL.COM</h1>
 
-    <p>Mail at info@grocty.com or React us out at Facebook or Twitter</p>
+    <
     <form action="#" class="form-contact p-2">
        
         <Input  placeholder={"Name"} id="name" />
